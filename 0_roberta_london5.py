@@ -2,6 +2,7 @@ from transformers import pipeline, AutoTokenizer, TFAutoModelForSequenceClassifi
 import re
 import pandas as pd
 
+model_name="cardiffnlp/twitter-roberta-base-sentiment"
 model = TFAutoModelForSequenceClassification.from_pretrained(model_name, from_pt=True)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 classifier = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
